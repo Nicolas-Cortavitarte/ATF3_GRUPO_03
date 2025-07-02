@@ -1,0 +1,70 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+
+body {
+    background-image: url(/Imagenes/Huellas.jpeg);
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+#contenido {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem;
+    min-height: 60vh;
+}
+
+button {
+    background-color: #213448;
+    cursor: pointer;
+    border: 0;
+    padding: 15px;
+    color: #fff;
+    font-size: 16px;
+    border-radius: 25px;
+    width: 250px;
+    margin-top: 25px;
+    box-shadow: 0 0 20px, rgba(0, 0, 0, 0.4);
+    transition-property: all;
+    transition-duration: 0.5s;
+}
+
+button:hover {
+    text-decoration: underline;
+    color: black;
+    background-color: lightblue;
+}
+
+@media (max-width: 768px) {
+    #contenido {
+        padding: 1.5rem;
+        min-height: 50vh;
+    }
+    
+    button {
+        padding: 0.8rem 1.5rem;
+        font-size: 1rem;
+        min-width: 180px;
+    }
+}
+
+@media (max-width: 480px) {
+    #contenido {
+        padding: 1rem;
+    }
+    
+    button {
+        padding: 0.7rem 1.2rem;
+        font-size: 0.9rem;
+        min-width: 160px;
+    }
+}

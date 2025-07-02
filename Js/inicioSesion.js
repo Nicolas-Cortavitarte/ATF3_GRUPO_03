@@ -13,7 +13,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const contrasenaValida = "123456";
 
     if (correo === correoValido && contrasena === contrasenaValida) {
-      mostrarPopover("Bienvenido 😁","✅ Inicio de sesión exitoso. Serás redirigido a la intranet.", true);
+      mostrarPopover("Bienvenido 😁","✅ Inicio de sesión exitoso.", true);
     } else {
       mostrarPopover("Inténtalo de nuevo 😕","❌ Credenciales incorrectas. Por favor, inténtalo nuevamente.");
     }

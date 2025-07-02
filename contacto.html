@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Pets</title>
+    <link rel="stylesheet" href="/Css/header-footer.css">
+    <link rel="stylesheet" href="/Css/contacto.css">
+    
+</head>
+
+<body>
+
+    <header>
+        <div class="cabecera">
+            <img src="Imagenes/logo.png" alt="Happy Pets" class="logo-img">
+            <h2 class="veterinaria">Happy Pets</h2>
+        </div>
+
+        <nav>
+            <a href="index.html">Inicio</a>
+            <a href="nosotros.html" class="nav-link">Nosotros</a>
+            <a href="Contacto.html" class="nav-link">Contacto</a>
+            <a href="catalogo.html" class="nav-link">Servicios</a>
+            <a href="login.html" class="nav-link">Iniciar Sesion</a>
+        </nav>
+    </header>
+
+    <form action="https://formsubmit.co/happypets.can@gmail.com" style="width:70%; margin: 0 auto;" method="POST"
+        id="Formulario">
+        <fieldset>
+            <h1>CONTÁCTANOS!</h1>
+            <label>Si tienes alguna duda déjanosla aquí, ¡te mandaremos un correo lo antes posible!</label>
+            <br><br>
+
+            <p>
+                <label for="txtNombre">Nombre</label>
+                <input name="txtNombre" size="30px" placeholder="Nombre">
+            </p>
+
+            <p>
+                <label for="txtNumero">Número</label>
+                <input name="txtNumero" id="txtNumero" pattern="[0-9]{9}" size="30px" placeholder="Número">
+            </p>
+
+            <p>
+                <label for="txtCorreo">Correo</label>
+                <input name="txtCorreo" type="email" id="txtCorreo" placeholder="Correo">
+            </p>
+
+            <label for="txtConsulta">Consulta</label>
+            <br>
+            <textarea name="txtConsulta" cols="30" rows="5" placeholder="Consulta"></textarea>
+
+            <p>
+                <button type="submit">Enviar</button>
+                <button type="reset">Limpiar</button>
+            </p>
+
+            <a href="#">Política de Privacidad</a>
+
+            <input type="hidden" name="_next" value="http://127.0.0.1:5500/Contactanos.html">
+            <input type="hidden" name="_captcha" value="false">
+        </fieldset>
+    </form>
+
+
+    <h3>¡Visítanos en nuestras Sedes!</h3>
+    <p class="direcciones">Av. XXXXX XXXXX XXXXX</p>
+    <p class="direcciones">Av. XXXXX XXXXX XXXXX</p>
+
+    <h3>Nuestro número telefónico</h3>
+    <p class="direcciones">+51 XXX XXX XXX</p>
+
+    <footer class="footer">
+        <div class="footer-content">
+            <p class="footer-title">Happy Pets</p>
+            <p class="footer-copy">2025. Happy Pets ©</p>
+        </div>
+    </footer>
+
+</body>
+
+</html>

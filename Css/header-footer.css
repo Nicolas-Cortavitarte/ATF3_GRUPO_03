@@ -1,0 +1,125 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+
+a {
+    text-decoration: none;
+    color: #fff;       
+}
+
+header {
+    display: flex;
+    flex-wrap: wrap;
+    height: auto;
+    background-color: #94B4C1;
+    justify-content: space-around;
+    align-items: center;
+    padding: 1rem;
+}
+
+.cabecera {
+    display: flex;
+    align-items: center;
+    color: #fff;
+    flex: 1 1 300px;
+    margin-bottom: 0.5rem;
+}
+
+.cabecera img {
+    max-height: 100px;
+    height: auto;
+    width: auto;
+    margin-right: 1rem;
+}
+
+nav {
+    flex: 1 1 300px;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-bottom: 0.5rem;
+}
+
+nav a {
+    font-weight: 600;
+    padding: 0.5rem 1rem;
+    white-space: nowrap;
+}
+
+nav a:hover {
+    color: black;
+}
+
+.footer {
+    background-color: #547792;
+    padding: 1.25rem 2rem;
+    color: #f4f4fd;
+    text-align: left;
+    margin-top: 1.25rem;
+}
+
+.footer-content {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.footer-title {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin: 0;
+}
+
+.footer-copy {
+    font-size: 0.875rem;
+    margin-top: 0.25rem;
+}
+
+/* Media Queries for responsiveness */
+@media (max-width: 768px) {
+    header {
+        justify-content: center;
+    }
+    .cabecera, nav {
+        flex: 1 1 100%;
+        justify-content: center;
+        margin-bottom: 0.5rem;
+    }
+    nav {
+        flex-wrap: wrap;
+    }
+    nav a {
+        padding: 0.5rem;
+        font-size: 1rem;
+    }
+    .footer-content {
+        flex-direction: column;
+        text-align: center;
+    }
+    .footer-copy {
+        margin-top: 0.5rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .cabecera img {
+        max-height: 80px;
+        margin-right: 0.5rem;
+    }
+    nav a {
+        font-size: 0.9rem;
+        padding: 0.4rem 0.6rem;
+    }
+    .footer-title {
+        font-size: 1.25rem;
+    }
+    .footer-copy {
+        font-size: 0.75rem;
+    }
+}

@@ -1,0 +1,171 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+
+body {
+    background-image: url(/Imagenes/Huellas.jpeg);
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+main {
+    flex: 1;
+}
+
+.contenedor {
+    display: flex;
+    background-color: #fffee8;
+    max-width: 1000px;
+    width: 90%;
+    height: auto;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.4);
+    margin: auto;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    border-radius: 25px;
+    flex-wrap: wrap;
+}
+
+.form {
+    padding: 30px 5%;
+    width: 100%;
+    max-width: 500px;
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
+}
+
+.form h2 {
+    font-size: 45px;
+    color: #213448;
+    font-weight: 600;
+    margin-bottom: 25px;
+}
+
+label {
+    font-size: 15px;
+    color: #969eae;
+}
+
+::placeholder {
+    color: #89879B;
+}
+
+.box {
+    border: 0;
+    background-color: #f4f4fd;
+    padding: 15px;
+    border-radius: 25px;
+    margin-bottom: 25px;
+    outline: none;
+}
+
+.submit {
+    background-color: #213448;
+    cursor: pointer;
+    border: 0;
+    padding: 15px;
+    color: #fff;
+    font-size: 16px;
+    border-radius: 25px;
+    width: 250px;
+    margin-top: 25px;
+    box-shadow: 0 0 20px, rgba(0, 0, 0, 0.4);
+    transition-property: all;
+    transition-duration: 0.5s;
+}
+
+.submit:hover {
+    text-decoration: underline;
+    color: black;
+    background-color: lightblue;
+}
+
+.checkBox {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.checkBox input[type="checkbox"] {
+    margin-right: 8px;
+    width: 16px;
+    height: 16px;
+    accent-color: #213448;
+}
+
+.Imagen {
+    padding: 50 px;
+}
+
+.img-1 {
+    width: 100%;
+    max-width: 400px;
+    margin-top: 75px;
+    height: auto;
+}
+
+.location {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 60px;
+}
+
+.social {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+.social img {
+    width: 50px;
+    margin: 0;
+}
+
+@media (max-width: 768px) {
+    .contenedor {
+        flex-direction: column;
+        height: auto;
+        width: 90%;
+    }
+    .form {
+        width: 100%;
+        padding: 20px 10px;
+    }
+    .form h2 {
+        font-size: 2.5rem;
+    }
+    .img-1 {
+        margin-top: 30px;
+        max-width: 100%;
+    }
+    .submit {
+        max-width: 100%;
+        width: 100%;
+    }
+}
+
+@media (max-width: 480px) {
+    .form h2 {
+        font-size: 2rem;
+    }
+    label {
+        font-size: 0.9rem;
+    }
+    .submit {
+        font-size: 0.9rem;
+    }
+    .social img {
+        width: 40px;
+        margin-right: 0;
+        margin-top: 50px;
+    }
+    .img-1 {
+        display: none;
+    }
+}

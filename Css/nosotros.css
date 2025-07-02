@@ -1,0 +1,256 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap');
+
+* {
+    padding: 0;
+    margin: 0;
+}
+
+.articulos h1 {
+    text-align: center;
+    background-color: #AAF0D1;
+    color: black;
+    padding: 20px;
+    font-size: 2.5em; 
+    border-radius: 10px;
+}
+
+.articulos h2 {
+    margin-bottom: 20px; 
+    font-size: 1.8em;
+    border-radius: 8px;
+    animation-name: colorChange;
+    animation-duration: 3s;
+    animation-iteration-count: 1;
+    animation-direction: alternate;
+}
+
+@keyframes colorChange {
+    0% {
+        color: #213448;
+    }
+    100% {
+        color: #94B4C1;
+    }
+}
+
+.contenido h2 {
+    margin-bottom: 20px; 
+    margin-right: 15px;
+    font-size: 1.8em;
+    background-color: #D8E5EB;
+    border-radius: 8px;
+    
+
+}
+
+.contenido p {
+    margin-top: 10px;
+    margin-right: 15px;
+    line-height: 1.8;
+    padding: 15px;
+    font-size: 1.2em;
+    background-color: #D8E5EB ;
+    border-radius: 8px;
+    color: #333;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+ol, ul {
+    margin-top: 15px;
+    margin-right: 40px;
+    margin-bottom: 10px;
+    background-color: #D8E5EB;
+    border-radius: 8px;
+    padding: 20px 30px; 
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+li {
+    margin-bottom: 8px;
+    margin-right: 40px;
+    font-size: 1.1em;
+    color: #333;
+    background-color: #D8E5EB;
+    padding-left: 10px;
+}
+
+.menu-secundario a{
+    display: block;
+    text-align: center;
+    color: black;
+    margin-bottom: 20px; 
+    font-size: 1.1em;
+    text-decoration: none;
+    padding: 10px;
+    background-color: #f4f4f4;
+    border-radius: 8px;
+    transition: background-color 0.5s, color 0.3s;
+}
+
+.contenido {
+    display: flex;
+    margin: 60px;
+}
+
+.articulos {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 40px;
+    width: 80%;
+    border-right: 3px solid #94B4C1;
+}
+
+.secciones {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+    align-items: center;
+    padding: 40px;
+}
+
+.secciones img {
+    width: 400px;
+    height: 300px;
+    object-fit: cover;
+    border-radius: 15px;
+}
+
+.menu-secundario {
+    width: 25%;
+    margin-top: 60px;
+    padding: 20px;
+}
+
+.menu-secundario a:hover {
+    background-color: #94B4C1;
+    color: black;
+}
+
+body {
+    background-image: url('/Imagenes/Huellas.jpeg');
+    font-family: 'Poppins', sans-serif;
+}
+
+
+@media screen and (max-width: 768px) {
+    .contenido {
+        flex-direction: column;
+        margin: 20px;
+    }
+
+    .articulos, .menu-secundario {
+        width: 100%;
+        border-right: none;
+    }
+
+    .secciones {
+        flex-direction: column;
+        padding: 20px;
+    }
+
+    .secciones img {
+        width: 100%;
+        height: auto;
+        border-radius: 10px;
+    }
+
+    nav li {
+        width: auto;
+        display: block;
+        padding: 15px;
+    }
+}
+
+.hidden {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.fade-in {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+@keyframes show {
+    from{
+        opacity: 0;
+        scale: 25%;
+    }
+    to{
+        opacity: 1;
+        scale: 100%;
+    }
+}
+ img{
+        view-timeline-name: --image;
+        view-timeline-axis: block;
+        animation-timeline: --image;
+        animation-name: show;
+
+        animation-range: entry 10% cover 50%;
+        animation-fill-mode: both;
+    }
+
+@media screen and (max-width: 768px) {
+    .contenido {
+        flex-direction: column;
+        margin: 20px;
+    }
+
+    .articulos, .menu-secundario {
+        width: 100%;
+        border-right: none;
+    }
+
+    .secciones {
+        flex-direction: column;
+        padding: 20px;
+    }
+
+    .secciones img {
+        margin-top: 10px;
+        width: 100%;
+        height: auto;
+        border-radius: 10px;
+    }
+
+    ol, ul {
+        padding: 20px;
+    }
+
+    li {
+        font-size: 1em;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    body {
+        font-size: 14px;
+    }
+
+    .contenido {
+        margin: 15px;
+    }
+
+    .secciones {
+        padding: 15px;
+    }
+
+    .menu-secundario {
+        padding: 10px;
+    }
+
+    .menu-secundario a {
+        font-size: 1em;
+        padding: 8px;
+    }
+
+    ol, ul {
+        padding: 15px;
+    }
+
+    li {
+        font-size: 0.95em;
+    }
+}

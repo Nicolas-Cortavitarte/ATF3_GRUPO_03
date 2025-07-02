@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro</title>
+    <link rel="stylesheet" href="/Css/header-footer.css">
+    <link rel="stylesheet" href="/Css/registro.css">
+
+</head>
+<body>
+
+    <header>
+        <div class="cabecera">
+            <img src="Imagenes/logo.png" alt="Happy Pets" class="logo-img">
+            <h2 class="veterinaria">Happy Pets</h2>
+        </div>
+
+        <nav>
+            <a href="index.html">Inicio</a>
+            <a href="nosotros.html" class="nav-link">Nosotros</a>
+            <a href="Contacto.html" class="nav-link">Contacto</a>
+            <a href="catalogo.html" class="nav-link">Servicios</a>
+            <a href="login.html" class="nav-link">Iniciar Sesion</a>
+        </nav>
+    </header>
+
+    <div class="contenedor">
+        <form action="#" class="form">
+            <h2>Happy Pets</h2>
+            <input type="text" placeholder="Nombres" class="box">
+            <input type="text" placeholder="Apellidos" class="box">
+            <input type="email" placeholder="Correo" class="box">
+            <input type="text" placeholder="Numero" pattern="[0-9]{8}" maxlength="8" required class="box">
+            <input type="password" placeholder="Ingrese Contraseña" class="box">
+            <input type="password" placeholder="Repetir contraseña" class="box">
+            <input type="submit" value="Crear Cuenta" class="submit">
+            <input type="button" value="Regresa" class="submit" onclick="location.href='login.html'">
+        </form>
+
+        <div class="Imagen">
+            <img src="Imagenes/logo.png" class="img-1" alt="">
+
+            <div class="location">
+                <div class="social">
+                    <img src="Imagenes/fa.svg" alt="">
+                    <img src="Imagenes/tw.svg" alt="">
+                    <img src="Imagenes/ins.svg" alt="">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <div class="footer-content">
+            <p class="footer-title">Happy Pets</p>
+            <p class="footer-copy">2025. Happy Pets ©</p>
+        </div>
+    </footer>
+
+</body>
+</html>

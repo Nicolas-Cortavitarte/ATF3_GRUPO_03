@@ -13,23 +13,26 @@ document.addEventListener("DOMContentLoaded", function () {
     const contrasenaValida = "123456";
 
     if (correo === correoValido && contrasena === contrasenaValida) {
-      mostrarDialogo("✅ Inicio de sesión exitoso. Serás redirigido a la intranet.", true);
+      mostrarPopover("Bienvenido 😁","✅ Inicio de sesión exitoso. Serás redirigido a la intranet.", true);
     } else {
-      mostrarDialogo("❌ Credenciales incorrectas. Por favor, inténtalo nuevamente.");
+      mostrarPopover("Inténtalo de nuevo 😕","❌ Credenciales incorrectas. Por favor, inténtalo nuevamente.");
     }
   });
 });
 
-function mostrarDialogo(mensaje, redirigir = false) {
-  const dialog = document.getElementById("dialogModal");
-  dialog.querySelector("h2").textContent = "Mensaje";
-  dialog.querySelector("p").textContent = mensaje;
-  dialog.showModal();
+function mostrarPopover(titulo, mensaje, redirigir = false) {
+  const popover = document.getElementById("msgPopover");
+  const mensajeTexto = document.getElementById("mensajePopover");
+  const tituloPop = document.getElementById("tituloPopover");
+  
+  mensajeTexto.textContent = mensaje;
+  tituloPop.textContent = titulo;
+  popover.showPopover();
 
-  if (redirigir) {
-    setTimeout(() => {
-      dialog.close();
+  setTimeout(() => {
+    popover.hidePopover();
+    if (redirigir) {
       window.location.href = "intranet.html";
-    }, 2000);
-  }
+    }
+  }, 1500);
 }

@@ -1,0 +1,204 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+
+body {
+    background-image: url(../Imagenes/Huellas.jpeg);
+}
+
+main {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.hero {
+    background: linear-gradient(rgba(148, 180, 193, 0.9), rgba(84, 119, 146, 0.9)), url('Imagenes/servicios2.jpeg');
+    background-size: cover;
+    background-position: center;
+    color: white;
+    text-align: center;
+    padding: 80px 20px;
+    margin: -20px -20px 40px -20px;
+    max-width: none;
+}
+
+.hero-content {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.hero h1 {
+    font-size: 2.5em;
+    margin-bottom: 20px;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+}
+
+.hero p {
+    font-size: 1.2em;
+    margin-bottom: 30px;
+}
+
+.servicios {
+    padding: 40px 0;
+}
+
+.servicios h2, .por-que-elegirnos h2 {
+    text-align: center;
+    color: #547792;
+    margin-bottom: 40px;
+    font-size: 2em;
+    background-color: lightblue;
+}
+
+.servicios-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    margin-bottom: 40px;
+}
+
+.servicio-card {
+    background: white;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease;
+}
+
+.servicio-card:hover {
+    transform: translateY(-5px);
+}
+
+.servicio-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.servicio-card h3, .servicio-card p {
+    padding: 15px;
+    margin: 0;
+}
+
+.servicio-card h3 {
+    color: #547792;
+}
+
+.razones-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    text-align: center;
+    margin: 40px 0;
+}
+
+.razon {
+    padding: 20px;
+    background: #f8f9fa;
+    border-radius: 10px;
+    transition: background-color 0.3s ease;
+}
+
+.razon:hover {
+    background: #94B4C1;
+    color: white;
+}
+
+.razon h3 {
+    color: #547792;
+    margin-bottom: 10px;
+}
+
+.razon:hover h3 {
+    color: white;
+}
+
+.contacto-rapido {
+    background-color: #94B4C1;
+    color: white;
+    text-align: center;
+    padding: 60px 20px;
+    margin: 40px -20px -20px -20px;
+    max-width: none;
+}
+
+.contacto-content {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.contacto-rapido h2 {
+    margin-bottom: 20px;
+    font-size: 2em;
+}
+
+.contacto-rapido p {
+    margin-bottom: 30px;
+    font-size: 1.1em;
+}
+
+@media (max-width: 768px) {
+    .hero {
+        padding: 60px 20px;
+    }
+
+    .hero h1 {
+        font-size: 2em;
+    }
+
+    .hero p {
+        font-size: 1.1em;
+    }
+
+    .servicios-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .razones-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .servicio-card img {
+        height: 180px;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero {
+        padding: 40px 20px;
+    }
+
+    .hero h1 {
+        font-size: 1.8em;
+    }
+
+    .hero p {
+        font-size: 1em;
+    }
+
+    .razones-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .cta-button {
+        padding: 10px 25px;
+        font-size: 0.9em;
+    }
+
+    .servicio-card img {
+        height: 160px;
+    }
+
+    .servicios h2, 
+    .por-que-elegirnos h2,
+    .contacto-rapido h2 {
+        font-size: 1.8em;
+    }
+}

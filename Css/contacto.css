@@ -25,7 +25,6 @@ body {
   text-align: center;
 }
 
-
 form {
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
   border-radius: 20px;
@@ -35,9 +34,8 @@ form {
   margin: 20px auto;
   padding: 30px 20px;
  background-color: white;
- 
-
 }
+
 .input-group,
 p {
     display: flex;
@@ -67,7 +65,7 @@ textarea {
 }
 
 .form-text,
-a {
+.priv {
   color: rgb(80, 62, 145);
   font-size: 14px;
   font-weight: 600;

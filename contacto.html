@@ -7,10 +7,25 @@
     <title>Happy Pets</title>
     <link rel="stylesheet" href="/Css/header-footer.css">
     <link rel="stylesheet" href="/Css/contacto.css">
-    
 </head>
 
 <body>
+    <style>
+        dialog,
+        :popover-open {
+            margin: auto;
+            width: 90%;
+            max-width: 600px;
+            border: thin solid gainsboro;
+            border-radius: 20px;
+            padding: 2rem;
+        }
+
+        dialog::backdrop {
+            background-color: #008a9c80;
+            backdrop-filter: blur(5px);
+        }
+    </style>
 
     <header>
         <div class="cabecera">
@@ -23,47 +38,52 @@
             <a href="nosotros.html" class="nav-link">Nosotros</a>
             <a href="Contacto.html" class="nav-link">Contacto</a>
             <a href="catalogo.html" class="nav-link">Servicios</a>
-            <a href="login.html" class="nav-link">Iniciar Sesion</a>
+            <a href="login.html" class="nav-link">Iniciar Sesión</a>
         </nav>
     </header>
 
     <form action="https://formsubmit.co/happypets.can@gmail.com" style="width:70%; margin: 0 auto;" method="POST"
         id="Formulario">
         <fieldset>
-            <h1>CONTÁCTANOS!</h1>
-            <label>Si tienes alguna duda déjanosla aquí, ¡te mandaremos un correo lo antes posible!</label>
+            <h1>¡CONTÁCTANOS!</h1>
+            <label>Si tienes alguna duda, déjanosla aquí. ¡Te responderemos lo antes posible!</label>
             <br><br>
 
             <p>
+
                 <label for="txtNombre">Nombre</label>
-                <input name="txtNombre" size="30px" placeholder="Nombre">
+                <input name="nombre" id="txtNombre" size="30" placeholder="Nombre" required>
             </p>
 
             <p>
                 <label for="txtNumero">Número</label>
-                <input name="txtNumero" id="txtNumero" pattern="[0-9]{9}" size="30px" placeholder="Número">
+                <input name="telefono" id="txtNumero" pattern="[0-9]{9}" size="30" placeholder="Número" required>
             </p>
 
             <p>
                 <label for="txtCorreo">Correo</label>
-                <input name="txtCorreo" type="email" id="txtCorreo" placeholder="Correo">
+                <input name="correo" type="email" id="txtCorreo" placeholder="Correo" required>
             </p>
 
             <label for="txtConsulta">Consulta</label>
             <br>
-            <textarea name="txtConsulta" cols="30" rows="5" placeholder="Consulta"></textarea>
+            <textarea name="mensaje" id="txtConsulta" cols="30" rows="5" placeholder="Consulta" required></textarea>
+
 
             <p>
-                <button type="submit">Enviar</button>
+                <button type="submit" id="btnEnviar">Enviar</button>
                 <button type="reset">Limpiar</button>
             </p>
 
             <a href="#" class="priv">Política de Privacidad</a>
 
-            <input type="hidden" name="_next" value="http://127.0.0.1:5500/Contactanos.html">
+
+            <input type="hidden" name="_next" value=" http://127.0.0.1:5501/contacto.html">
             <input type="hidden" name="_captcha" value="false">
+            <input type="hidden" name="confirmado" id="confirmado" value="false">
         </fieldset>
     </form>
+
 
     <dialog id="dialogModal">
         <h2>¡Tu duda casi ah sido enviada!</h2>
@@ -76,7 +96,7 @@
         <button id="btnCerrarModal">Confirmar y Enviar</button>
     </dialog>
 
-    <h3>¡Visítanos en nuestras Sedes!</h3>
+    <h3>¡Visítanos en nuestras sedes!</h3>
     <p class="direcciones">Av. XXXXX XXXXX XXXXX</p>
     <p class="direcciones">Av. XXXXX XXXXX XXXXX</p>
 
@@ -90,8 +110,8 @@
         </div>
     </footer>
 
-    <script src="Js/contacto.js"></script>
 
+    <script src="/Js/contacto.js"></script>
 </body>
 
 </html>

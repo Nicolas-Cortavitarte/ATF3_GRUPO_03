@@ -10,7 +10,7 @@
 body {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   background-color: #ecefca;
-  background-image: url(/Imagenes/Huellas.jpeg);
+  background-image: url(../Imagenes/Huellas.jpeg);
   background-repeat: repeat;
   background-attachment: fixed;
   color: #333;

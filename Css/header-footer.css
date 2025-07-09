@@ -17,9 +17,10 @@ header {
     flex-wrap: wrap;
     height: auto;
     background-color: #94B4C1;
-    justify-content: space-around;
+    justify-content: space-between;
     align-items: center;
     padding: 1rem;
+    position: relative;
 }
 
 .cabecera {
@@ -37,6 +38,38 @@ header {
     margin-right: 1rem;
 }
 
+/* Hamburger Menu Button */
+.menu-toggle {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+    padding: 0.5rem;
+    background: none;
+    border: none;
+    z-index: 1001;
+}
+
+.menu-toggle span {
+    width: 25px;
+    height: 3px;
+    background-color: #fff;
+    margin: 3px 0;
+    transition: 0.3s;
+    transform-origin: center;
+}
+
+.menu-toggle.active span:nth-child(1) {
+    transform: rotate(45deg) translate(6px, 6px);
+}
+
+.menu-toggle.active span:nth-child(2) {
+    opacity: 0;
+}
+
+.menu-toggle.active span:nth-child(3) {
+    transform: rotate(-45deg) translate(6px, -6px);
+}
+
 nav {
     flex: 1 1 300px;
     display: flex;
@@ -49,6 +82,7 @@ nav a {
     font-weight: 600;
     padding: 0.5rem 1rem;
     white-space: nowrap;
+    transition: color 0.3s ease;
 }
 
 nav a:hover {
@@ -84,20 +118,68 @@ nav a:hover {
 /* Media Queries for responsiveness */
 @media (max-width: 768px) {
     header {
-        justify-content: center;
+        justify-content: space-between;
+        flex-wrap: nowrap;
     }
-    .cabecera, nav {
-        flex: 1 1 100%;
-        justify-content: center;
-        margin-bottom: 0.5rem;
+    
+    .cabecera {
+        flex: 1;
+        margin-bottom: 0;
     }
+    
+    .menu-toggle {
+        display: flex;
+        order: 3;
+    }
+    
     nav {
-        flex-wrap: wrap;
+        position: fixed;
+        top: 0;
+        left: -100%;
+        width: 80%;
+        max-width: 300px;
+        height: 100vh;
+        background-color: #94B4C1;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: center;
+        padding-top: 80px;
+        transition: left 0.3s ease;
+        z-index: 1000;
+        box-shadow: 2px 0 10px rgba(0, 0, 0, 0.1);
+        margin-bottom: 0;
     }
+    
+    nav.nav-open {
+        left: 0;
+    }
+    
     nav a {
-        padding: 0.5rem;
-        font-size: 1rem;
+        padding: 1rem 2rem;
+        font-size: 1.1rem;
+        width: 100%;
+        text-align: center;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        margin: 0;
     }
+    
+    nav a:hover {
+        background-color: rgba(255, 255, 255, 0.1);
+        color: #fff;
+    }
+    
+    /* Overlay for mobile menu */
+    nav.nav-open::before {
+        content: '';
+        position: fixed;
+        top: 0;
+        left: 80%;
+        width: 20%;
+        height: 100vh;
+        background-color: rgba(0, 0, 0, 0.5);
+        z-index: -1;
+    }
+    
     .footer-content {
         flex-direction: column;
         text-align: center;
@@ -112,10 +194,17 @@ nav a:hover {
         max-height: 80px;
         margin-right: 0.5rem;
     }
-    nav a {
-        font-size: 0.9rem;
-        padding: 0.4rem 0.6rem;
+    
+    nav {
+        width: 85%;
+        max-width: 280px;
     }
+    
+    nav a {
+        font-size: 1rem;
+        padding: 0.8rem 1.5rem;
+    }
+    
     .footer-title {
         font-size: 1.25rem;
     }

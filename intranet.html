@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,8 +9,9 @@
     <link rel="stylesheet" href="Css/intranet.css">
 
 </head>
+
 <body>
-    
+
     <header>
         <div class="cabecera">
             <img src="Imagenes/logo.png" alt="Happy Pets" class="logo-img">
@@ -34,7 +36,15 @@
     <div id="contenido">
         <button onclick="cerrarSesion()">Cerrar Sesión</button>
     </div>
-    
+
+    <dialog id="dialogCerrarSesion" class="modal-cerrar">
+        <h3>¿Deseas cerrar sesión?</h3>
+        <div class="botones-modal">
+            <button id="confirmarCerrar" class="btn-confirmar">Sí, cerrar</button>
+            <button id="cancelarCerrar" class="btn-cancelar">Cancelar</button>
+        </div>
+    </dialog>
+
     <footer class="footer">
         <div class="footer-content">
             <p class="footer-title">Happy Pets</p>

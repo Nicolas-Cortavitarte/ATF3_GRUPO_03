@@ -10,7 +10,6 @@
 </head>
 
 <body>
-
     <header>
         <div class="cabecera">
             <img src="Imagenes/logo.png" alt="Happy Pets" class="logo-img">
@@ -40,25 +39,25 @@
             <br><br>
 
             <p>
-
                 <label for="txtNombre">Nombre</label>
-                <input name="nombre" id="txtNombre" size="30" placeholder="Nombre" required>
+                <input name="nombre" id="txtNombre" size="30" placeholder="Nombre" required oninput="validarNombre()">
             </p>
 
             <p>
                 <label for="txtNumero">Número</label>
-                <input name="telefono" id="txtNumero" pattern="[0-9]{9}" size="30" placeholder="Número" required>
+                <input name="telefono" id="txtNumero" pattern="[0-9]{9}" size="30" placeholder="Número" required
+                    oninput="validarNumero()">
             </p>
 
             <p>
                 <label for="txtCorreo">Correo</label>
-                <input name="correo" type="email" id="txtCorreo" placeholder="Correo" required>
+                <input name="correo" type="email" id="txtCorreo" placeholder="Correo" required
+                    oninput="validarCorreo()">
             </p>
 
             <label for="txtConsulta">Consulta</label>
             <br>
             <textarea name="mensaje" id="txtConsulta" cols="30" rows="5" placeholder="Consulta" required></textarea>
-
 
             <p>
                 <button type="submit" id="btnEnviar">Enviar</button>
@@ -67,31 +66,24 @@
 
             <a href="#" class="priv">Política de Privacidad</a>
 
-
             <input type="hidden" name="_next" value="http://127.0.0.1:5501/contacto.html">
             <input type="hidden" name="_captcha" value="false">
-            <input type="hidden" name="confirmado" id="confirmado" value="false">
         </fieldset>
     </form>
 
-
     <dialog id="dialogModal">
-        <h2>¡Tu duda casi ah sido enviada!</h2>
-        <p><strong>Nombre:</strong> <span id="resNombre"></span></p>
-        <p><strong>Número:</strong> <span id="resNumero"></span></p>
-        <p><strong>Correo:</strong> <span id="resCorreo"></span></p>
-        <p><strong>Consulta:</strong></p>
-        <p id="resConsulta"></p>
+        <h2>¡Tu duda ha sido enviada! 🐾</h2>
 
-        <button id="btnCerrarModal">Confirmar y Enviar</button>
+        <div class="dato"><strong>Nombre:</strong> <span id="resNombre"></span></div>
+        <div class="dato"><strong>Número:</strong> <span id="resNumero"></span></div>
+        <div class="dato"><strong>Correo:</strong> <span id="resCorreo"></span></div>
+        <div class="dato"><strong>Consulta:</strong> <span id="resConsulta"></span></div>
+
+        <p>Gracias por contactarnos. Te responderemos pronto 🐶🐱</p>
+        <br>
+
+        <button id="btnCerrarModal">Cerrar</button>
     </dialog>
-
-    <h3>¡Visítanos en nuestras sedes!</h3>
-    <p class="direcciones">Av. XXXXX XXXXX XXXXX</p>
-    <p class="direcciones">Av. XXXXX XXXXX XXXXX</p>
-
-    <h3>Nuestro número telefónico</h3>
-    <p class="direcciones">+51 XXX XXX XXX</p>
 
     <footer class="footer">
         <div class="footer-content">
@@ -99,7 +91,6 @@
             <p class="footer-copy">2025. Happy Pets ©</p>
         </div>
     </footer>
-
 
     <script src="Js/contacto.js"></script>
     <script src="Js/menu.js"></script>

@@ -38,7 +38,6 @@ header {
     margin-right: 1rem;
 }
 
-/* Hamburger Menu Button */
 .menu-toggle {
     display: none;
     flex-direction: column;
@@ -115,7 +114,6 @@ nav a:hover {
     margin-top: 0.25rem;
 }
 
-/* Media Queries for responsiveness */
 @media (max-width: 768px) {
     header {
         justify-content: space-between;
@@ -168,7 +166,6 @@ nav a:hover {
         color: #fff;
     }
     
-    /* Overlay for mobile menu */
     nav.nav-open::before {
         content: '';
         position: fixed;

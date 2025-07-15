@@ -87,19 +87,6 @@ label {
     background-color: lightblue;
 }
 
-.checkBox {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-}
-
-.checkBox input[type="checkbox"] {
-    margin-right: 8px;
-    width: 16px;
-    height: 16px;
-    accent-color: #213448;
-}
-
 .Imagen {
     padding: 50px;
 }
@@ -125,6 +112,14 @@ label {
 .social img {
     width: 50px;
     margin: 0;
+}
+
+.mensaje-error {
+    color: red;
+    font-size: 0.85rem;
+    margin-top: -20px;
+    margin-bottom: 15px;
+    padding-left: 10px;
 }
 
 @media (max-width: 768px) {

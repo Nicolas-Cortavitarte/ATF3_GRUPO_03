@@ -1,13 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Registro</title>
     <link rel="stylesheet" href="Css/header-footer.css">
-    <link rel="stylesheet" href="Css/registro.css">
+    <link rel="stylesheet" href="css/registro.css">
 
 </head>
+
 <body>
 
     <header>
@@ -34,12 +36,12 @@
     <div class="contenedor">
         <form action="#" class="form">
             <h2>Happy Pets</h2>
-            <input type="text" placeholder="Nombres" class="box">
-            <input type="text" placeholder="Apellidos" class="box">
-            <input type="email" placeholder="Correo" class="box">
-            <input type="text" placeholder="Numero" pattern="[0-9]{8}" maxlength="8" required class="box">
-            <input type="password" placeholder="Ingrese Contraseña" class="box">
-            <input type="password" placeholder="Repetir contraseña" class="box">
+            <input type="text" id="nombres" placeholder="Nombres" class="box">
+            <input type="text" id="apellidos" placeholder="Apellidos" class="box">
+            <input type="email" id="correo" placeholder="Correo" class="box">
+            <input type="text" id="numero" placeholder="Numero" pattern="[0-9]{8}" maxlength="8" required class="box">
+            <input type="password" id="pass1" placeholder="Ingrese Contraseña" class="box">
+            <input type="password" id="pass2" placeholder="Repetir contraseña" class="box">
             <input type="submit" value="Crear Cuenta" class="submit">
             <input type="button" value="Regresa" class="submit" onclick="location.href='login.html'">
         </form>
@@ -64,7 +66,8 @@
         </div>
     </footer>
 
-    <script src="Js/menu.js"></script>
+    <script src="js/menu.js"></script>
+    <script src="js/registro.js"></script>
 </body>
 
 </html>

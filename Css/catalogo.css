@@ -9,7 +9,7 @@
 
 body {
   background-color: #ecefca;
-  background-image: url(/imagenes/Huellas.jpeg);
+  background-image: url("../imagenes/Huellas.jpeg");
   background-repeat: repeat;
   background-attachment: fixed;
   color: #333;
@@ -23,6 +23,12 @@ form {
   text-align: center;
   width: 500px;
   background-color: white;
+}
+
+.contenido {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
 }
 
 .input-group,

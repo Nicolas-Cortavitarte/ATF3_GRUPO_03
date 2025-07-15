@@ -10,6 +10,8 @@ document.addEventListener('DOMContentLoaded', function() {
 
             const isExpanded = nav.classList.contains('nav-open');
             menuToggle.setAttribute('aria-expanded', isExpanded);
+
+            document.body.classList.toggle('menu-open', isExpanded);
         });
     }
 
@@ -19,6 +21,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 nav.classList.remove('nav-open');
                 menuToggle.classList.remove('active');
                 menuToggle.setAttribute('aria-expanded', 'false');
+                document.body.classList.remove('menu-open');
             }
         });
     });
@@ -27,11 +30,12 @@ document.addEventListener('DOMContentLoaded', function() {
         if (window.innerWidth <= 768) {
             const isClickInsideNav = nav.contains(event.target);
             const isClickOnToggle = menuToggle.contains(event.target);
-            
+
             if (!isClickInsideNav && !isClickOnToggle && nav.classList.contains('nav-open')) {
                 nav.classList.remove('nav-open');
                 menuToggle.classList.remove('active');
                 menuToggle.setAttribute('aria-expanded', 'false');
+                document.body.classList.remove('menu-open');
             }
         }
     });
@@ -41,6 +45,8 @@ document.addEventListener('DOMContentLoaded', function() {
             nav.classList.remove('nav-open');
             menuToggle.classList.remove('active');
             menuToggle.setAttribute('aria-expanded', 'false');
+            document.body.classList.remove('menu-open');
         }
     });
 });
+

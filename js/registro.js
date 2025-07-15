@@ -31,8 +31,8 @@ document.addEventListener("DOMContentLoaded", function () {
             isValid = false;
         }
 
-        if (!/^\d{8}$/.test(campos.numero.value)) {
-            mostrarError(campos.numero, "Número debe tener 8 dígitos.");
+        if (!/^\d{9}$/.test(campos.numero.value)) {
+            mostrarError(campos.numero, "Número debe tener 9 dígitos.");
             isValid = false;
         }
 

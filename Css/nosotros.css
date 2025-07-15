@@ -127,7 +127,7 @@ li {
 }
 
 body {
-    background-image: url(../Imagenes/Huellas.jpeg);
+    background-image: url(/imagenes/Huellas.jpeg);
     font-family: 'Poppins', sans-serif;
 }
 

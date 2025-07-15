@@ -43,76 +43,6 @@ p {
   flex-direction: column;
   text-align: left;
 }
-dialog {
-    margin: auto;
-    width: auto;
-    max-width: 600px;
-    border: thin solid gainsboro;
-    border-radius: 20px;
-    padding: 2rem;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    animation: aparecer 0.3s ease-out forwards;
-}
-
-dialog.cerrar-animacion {
-    animation: desaparecer 0.3s ease-in forwards;
-}
-
-@keyframes aparecer {
-    from {
-        opacity: 0;
-        transform: scale(0.8);
-    }
-    to {
-        opacity: 1;
-        transform: scale(1);
-    }
-}
-
-@keyframes desaparecer {
-    from {
-        opacity: 1;
-        transform: scale(1);
-    }
-    to {
-        opacity: 0;
-        transform: scale(0.8);
-    }
-}
-
-dialog::backdrop {
-    background-color: rgba(0, 0, 0, 0.5);
-    backdrop-filter: blur(5px);
-}
-
-#dialogModal .dato {
-    display: flex;
-    justify-content: center;
-    gap: 8px;
-    margin: 5px 0;
-    font-size: 16px;
-}
-
-#btnCerrarModal {
-    background-color: #213448;
-    color: white;
-    padding: 10px 20px;
-    border: none;
-    border-radius: 20px;
-    font-size: 16px;
-    cursor: pointer;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-}
-
-#btnCerrarModal:hover {
-    background-color: #415c78;
-}
-
-
 
 label {
   font-size: 15px;
@@ -129,13 +59,12 @@ textarea {
   border: 2px solid #f8fffc;
   color: black;
   outline: none;
+  width: 100%;
+  box-sizing: border-box;
 }
 
-.form-text {
-  margin-bottom: 30px;
-  display: flex;
-  justify-content: space-between;
-  text-align: center;
+textarea {
+  font-family: Arial, Helvetica, sans-serif;
 }
 
 .form-text,
@@ -162,27 +91,14 @@ button {
 button:hover {
   transform: scale(1.03);
   box-shadow: 0 0 30px rgba(148, 180, 193, 0.9);
-
 }
 
 fieldset {
   border: 4px solid white;
   border-radius: 20px;
   padding: 20px;
-  background-color: none;
   margin-bottom: 20px;
   margin-top: 20px;
-
-}
-
-input,
-textarea {
-  width: 100%;
-  box-sizing: border-box;
-}
-
-textarea {
-  font-family: Arial, Helvetica, sans-serif;
 }
 
 h3 {
@@ -225,21 +141,74 @@ h3 {
 
   animation-range: entry 25% cover 20%;
 }
+/* ✅ Validación automática verde/rojo */
+input, textarea {
+    border: 2px solid #f8fffc; /* blanco por defecto */
+    background-color: #f0f4ff; /* un azul clarito como en tu captura */
+    transition: border-color 0.3s ease;
+}
+input:focus, textarea:focus {
+    outline: none;
+}
+/* ✅ Rojo solo cuando empiezas a escribir */
+input:focus:invalid,
+textarea:focus:invalid {
+    border-color: red;
+}
 
-dialog,
-:popover-open {
-  margin: auto;
-  width: 90%;
-  max-width: 600px;
-  border: thin solid gainsboro;
-  border-radius: 20px;
-  padding: 2rem;
+/* ✅ Verde cuando el campo es válido */
+input:focus:valid,
+textarea:focus:valid {
+    border-color: green;
+}
+#txtConsulta {
+    border: 2px solid #f8fffc; /* siempre blanco */
+    background-color: #f0f4ff; /* fondo blanco */
+}
+
+/* ✅ Animación suave al modal */
+@keyframes zoomIn {
+    from {
+        opacity: 0;
+        transform: scale(0.8);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+dialog {
+    margin: auto;
+    width: 90%;
+    max-width: 600px;
+    border: thin solid gainsboro;
+    border-radius: 20px;
+    padding: 2rem;
+    text-align: center;
+    animation: zoomIn 0.4s ease-out forwards;
 }
 
 dialog::backdrop {
-  background-color: #00000080;
-  backdrop-filter: blur(5px);
+    background-color: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(5px); /* Fondo borroso */
 }
+
+/* ✅ Datos del modal ordenados */
+.info p {
+    display: flex;
+    justify-content: center;
+    gap: 8px; /* Espacio entre nombre y valor */
+    margin: 5px 0;
+    font-size: 16px;
+}
+
+.info strong {
+    font-weight: bold;
+    color: #213448;
+}
+
+
 
 @keyframes show {
   from {

@@ -3,28 +3,56 @@ document.addEventListener('DOMContentLoaded', function () {
     const dialogModal = document.getElementById('dialogModal');
     const btnCerrarModal = document.getElementById('btnCerrarModal');
 
-    window.validarNombre = function () {
-        const nombre = document.getElementById('txtNombre').value.trim();
-        document.getElementById('txtNombre').style.borderColor = nombre.length < 3 ? "red" : "green";
+    function setBorderColor(input, isValid) {
+        if (input.value.trim() === "") {
+            input.style.borderColor = "#f8fffc"; // Blanco cuando vacío
+        } else {
+            input.style.borderColor = isValid ? "green" : "red";
+        }
     }
 
-    window.validarNumero = function () {
-        const numero = document.getElementById('txtNumero').value.trim();
+    // Validaciones
+    function validarNombre() {
+        const campo = document.getElementById('txtNombre');
+        const valido = campo.value.trim().length >= 3;
+        setBorderColor(campo, valido);
+    }
+
+    function validarNumero() {
+        const campo = document.getElementById('txtNumero');
         const regex = /^[0-9]{9}$/;
-        document.getElementById('txtNumero').style.borderColor = regex.test(numero) ? "green" : "red";
+        const valido = regex.test(campo.value.trim());
+        setBorderColor(campo, valido);
     }
 
-    window.validarCorreo = function () {
-        const correo = document.getElementById('txtCorreo').value.trim();
-        document.getElementById('txtCorreo').style.borderColor = correo.includes('@') ? "green" : "red";
+    function validarCorreo() {
+        const campo = document.getElementById('txtCorreo');
+        const regex = /^[^@]+@[^@]+\.[a-zA-Z]{2,}$/;
+        const valido = regex.test(campo.value.trim());
+        setBorderColor(campo, valido);
     }
 
+    // Escuchar eventos SOLO cuando escriben o dejan de escribir
+    const nombreField = document.getElementById('txtNombre');
+    const numeroField = document.getElementById('txtNumero');
+    const correoField = document.getElementById('txtCorreo');
+
+    nombreField.addEventListener('input', validarNombre);
+    nombreField.addEventListener('blur', validarNombre);
+
+    numeroField.addEventListener('input', validarNumero);
+    numeroField.addEventListener('blur', validarNumero);
+
+    correoField.addEventListener('input', validarCorreo);
+    correoField.addEventListener('blur', validarCorreo);
+
+    // Envío del formulario
     form.addEventListener('submit', function (event) {
         event.preventDefault();
 
-        const nombre = form.txtNombre.value.trim();
-        const numero = form.txtNumero.value.trim();
-        const correo = form.txtCorreo.value.trim();
+        const nombre = nombreField.value.trim();
+        const numero = numeroField.value.trim();
+        const correo = correoField.value.trim();
         const consulta = form.txtConsulta.value.trim();
 
         if (!nombre || !numero || !correo || !consulta) {
@@ -37,18 +65,29 @@ document.addEventListener('DOMContentLoaded', function () {
         document.getElementById('resCorreo').textContent = correo;
         document.getElementById('resConsulta').textContent = consulta;
 
-        dialogModal.showModal();
+        fetch('https://formsubmit.co/ajax/happypets.can@gmail.com', {
+            method: 'POST',
+            body: new FormData(form)
+        })
+        .then(response => {
+            if (response.ok) {
+                dialogModal.showModal();
+            } else {
+                alert("Error al enviar el formulario.");
+            }
+        })
+        .catch(error => {
+            console.error("Error:", error);
+            alert("Error al enviar el formulario.");
+        });
     });
 
     btnCerrarModal.addEventListener('click', function () {
-        // Animación de salida
-        dialogModal.classList.add('cerrar-animacion');
-
-        dialogModal.addEventListener('animationend', function handler() {
-            dialogModal.classList.remove('cerrar-animacion');
-            dialogModal.close();
-            form.submit();
-            dialogModal.removeEventListener('animationend', handler);
+        dialogModal.close();
+        form.reset();
+        // Restaurar bordes a blanco
+        [nombreField, numeroField, correoField].forEach(el => {
+            el.style.borderColor = "#f8fffc";
         });
     });
 });

@@ -30,9 +30,7 @@
             <a href="login.html" class="nav-link">Iniciar Sesión</a>
         </nav>
     </header>
-
-    <form action="https://formsubmit.co/happypets.can@gmail.com" style="width:70%; margin: 0 auto;" method="POST"
-        id="Formulario">
+    <form action="https://formsubmit.co/happypets.can@gmail.com" method="POST" id="Formulario" target="_blank">
         <fieldset>
             <h1>¡CONTÁCTANOS!</h1>
             <label>Si tienes alguna duda, déjanosla aquí. ¡Te responderemos lo antes posible!</label>
@@ -63,27 +61,21 @@
                 <button type="submit" id="btnEnviar">Enviar</button>
                 <button type="reset">Limpiar</button>
             </p>
-
-            <a href="#" class="priv">Política de Privacidad</a>
-
-            <input type="hidden" name="_next" value="http://127.0.0.1:5501/contacto.html">
-            <input type="hidden" name="_captcha" value="false">
         </fieldset>
     </form>
 
     <dialog id="dialogModal">
         <h2>¡Tu duda ha sido enviada! 🐾</h2>
-
-        <div class="dato"><strong>Nombre:</strong> <span id="resNombre"></span></div>
-        <div class="dato"><strong>Número:</strong> <span id="resNumero"></span></div>
-        <div class="dato"><strong>Correo:</strong> <span id="resCorreo"></span></div>
-        <div class="dato"><strong>Consulta:</strong> <span id="resConsulta"></span></div>
-
-        <p>Gracias por contactarnos. Te responderemos pronto 🐶🐱</p>
-        <br>
-
+        <div class="info">
+            <p><strong>Nombre:</strong> <span id="resNombre"></span></p>
+            <p><strong>Número:</strong> <span id="resNumero"></span></p>
+            <p><strong>Correo:</strong> <span id="resCorreo"></span></p>
+            <p><strong>Consulta:</strong> <span id="resConsulta"></span></p>
+        </div>
         <button id="btnCerrarModal">Cerrar</button>
     </dialog>
+
+
 
     <footer class="footer">
         <div class="footer-content">

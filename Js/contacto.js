@@ -5,13 +5,12 @@ document.addEventListener('DOMContentLoaded', function () {
 
     function setBorderColor(input, isValid) {
         if (input.value.trim() === "") {
-            input.style.borderColor = "#f8fffc"; // Blanco cuando vacío
+            input.style.borderColor = "#f8fffc"; 
         } else {
             input.style.borderColor = isValid ? "green" : "red";
         }
     }
 
-    // Validaciones
     function validarNombre() {
         const campo = document.getElementById('txtNombre');
         const valido = campo.value.trim().length >= 3;
@@ -32,7 +31,6 @@ document.addEventListener('DOMContentLoaded', function () {
         setBorderColor(campo, valido);
     }
 
-    // Escuchar eventos SOLO cuando escriben o dejan de escribir
     const nombreField = document.getElementById('txtNombre');
     const numeroField = document.getElementById('txtNumero');
     const correoField = document.getElementById('txtCorreo');
@@ -46,7 +44,6 @@ document.addEventListener('DOMContentLoaded', function () {
     correoField.addEventListener('input', validarCorreo);
     correoField.addEventListener('blur', validarCorreo);
 
-    // Envío del formulario
     form.addEventListener('submit', function (event) {
         event.preventDefault();
 
@@ -85,7 +82,7 @@ document.addEventListener('DOMContentLoaded', function () {
     btnCerrarModal.addEventListener('click', function () {
         dialogModal.close();
         form.reset();
-        // Restaurar bordes a blanco
+        
         [nombreField, numeroField, correoField].forEach(el => {
             el.style.borderColor = "#f8fffc";
         });

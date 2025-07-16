@@ -24,10 +24,8 @@ body {
     min-height: 60vh;
     width: 100%;
     transition: all 0.3s ease;
-    margin-left: 220px; /* Leave space for sidebar */
+    margin-left: 220px; 
 }
-
-/* Eliminado estilos de barra de tareas lateral según solicitud */
 
 button {
     background-color: #213448;

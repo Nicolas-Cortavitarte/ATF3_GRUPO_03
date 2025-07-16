@@ -22,11 +22,8 @@ body {
   padding: 20px;
   position: relative;
   z-index: 1;
-  margin-left: 220px; /* Leave space for sidebar */
+  margin-left: 220px;
 }
-
-
-/* Removed sidebar taskbar styles as per user request */
 
 h3 {
   background-color: #94B4C1;

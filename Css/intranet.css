@@ -24,7 +24,10 @@ body {
     min-height: 60vh;
     width: 100%;
     transition: all 0.3s ease;
+    margin-left: 220px; /* Leave space for sidebar */
 }
+
+/* Eliminado estilos de barra de tareas lateral según solicitud */
 
 button {
     background-color: #213448;
@@ -111,12 +114,36 @@ button:hover {
     #contenido {
         padding: 1.5rem;
         min-height: 50vh;
+        margin-left: 0;
     }
 
     button {
         padding: 0.8rem 1.5rem;
         font-size: 1rem;
         min-width: 180px;
+    }
+
+    .sidebar-tasks {
+        position: relative;
+        width: 100%;
+        height: auto;
+        box-shadow: none;
+        padding: 0.5rem 0;
+        display: flex;
+        justify-content: center;
+    }
+
+    .sidebar-tasks ul {
+        display: flex;
+        gap: 1rem;
+    }
+
+    .sidebar-tasks ul li {
+        margin-bottom: 0;
+    }
+
+    .sidebar-tasks ul li a {
+        padding: 0.5rem 1rem;
     }
 }
 

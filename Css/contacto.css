@@ -141,32 +141,31 @@ h3 {
 
   animation-range: entry 25% cover 20%;
 }
-/* ✅ Validación automática verde/rojo */
+
 input, textarea {
-    border: 2px solid #f8fffc; /* blanco por defecto */
-    background-color: #f0f4ff; /* un azul clarito como en tu captura */
+    border: 2px solid #f8fffc; 
+    background-color: #f0f4ff; 
     transition: border-color 0.3s ease;
 }
 input:focus, textarea:focus {
     outline: none;
 }
-/* ✅ Rojo solo cuando empiezas a escribir */
+
 input:focus:invalid,
 textarea:focus:invalid {
     border-color: red;
 }
 
-/* ✅ Verde cuando el campo es válido */
 input:focus:valid,
 textarea:focus:valid {
     border-color: green;
 }
 #txtConsulta {
-    border: 2px solid #f8fffc; /* siempre blanco */
-    background-color: #f0f4ff; /* fondo blanco */
+    border: 2px solid #f8fffc; 
+    background-color: #f0f4ff; 
 }
 
-/* ✅ Animación suave al modal */
+
 @keyframes zoomIn {
     from {
         opacity: 0;
@@ -191,14 +190,14 @@ dialog {
 
 dialog::backdrop {
     background-color: rgba(0, 0, 0, 0.5);
-    backdrop-filter: blur(5px); /* Fondo borroso */
+    backdrop-filter: blur(5px); 
 }
 
-/* ✅ Datos del modal ordenados */
+
 .info p {
     display: flex;
     justify-content: center;
-    gap: 8px; /* Espacio entre nombre y valor */
+    gap: 8px; 
     margin: 5px 0;
     font-size: 16px;
 }

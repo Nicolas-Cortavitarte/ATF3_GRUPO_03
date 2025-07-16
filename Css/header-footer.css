@@ -116,18 +116,33 @@ nav a:hover {
 
 @media (max-width: 768px) {
     header {
-        justify-content: space-between;
+        justify-content: center;
         flex-wrap: nowrap;
+        gap: 1rem;
+        text-align: center;
     }
 
     .cabecera {
-        flex: 1;
+        flex: none;
         margin-bottom: 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .cabecera img {
+        max-height: 80px;
+        margin: 0 0 0.5rem 0;
     }
 
     .menu-toggle {
         display: flex;
         order: 3;
+        position: absolute;
+        right: 1rem;
+        top: 1rem;
+        z-index: 1001;
     }
 
     nav {
